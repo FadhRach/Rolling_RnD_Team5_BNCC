@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Form</title>
+        <style type="text/css">
+            body {
+              background-image: url(background.png);
+              font-family: "Poppins", sans-serif;
+              font-weight: 700;
+              font-style: normal;
+              margin: 0;
+              height: 100vh; 
+              display: flex;
+              align-items: center;
+              justify-content: center; 
+              background-size: cover;
+            }
+
+            .container {
+              background-color: rgb(0, 123, 255);;
+              padding: 1.5rem;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              border-radius: 0.75rem;
+              color: aliceblue;
+              -webkit-border-radius: 0.75rem;
+              -moz-border-radius: 0.75rem;
+              -ms-border-radius: 0.75rem;
+              -o-border-radius: 0.75rem;
+            }
+
+            button {
+              font-size: 20px;
+              padding: 10px 20px;
+              margin: 10px;
+              border: none;
+              cursor: pointer;
+              border-radius: 5px;
+              background-color: white;
+              color: rgb(0, 123, 255);
+              transition: background-color 0.3s;
+            }
+
+            input {
+              font-size: 20px;
+              padding: 10px 20px;
+              margin: 10px;
+              background-color: rgba(240, 248, 255, 0);
+            }
+
+            ::placeholder {
+              font-family: "Poppins", sans-serif;
+              font-weight: 500;
+              font-style: normal;
+              color: white;
+            }
+
+            h2 {
+              font-size: 35px;
+              margin-bottom: 20px;
+            }
+
+            button:hover {
+              background-color: lightskyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+          <h2>REGISTER FORM</h2>\
+          <input placeholder="Name" />
+          <br /><br />
+          <input placeholder="Email" />
+          <br /><br />
+          <input placeholder="Password" />
+          <br /><br />
+          <button id="submit" onclick="backtoMain()">Submit</button>
+        </div>
+
+        <script>
+            var tombol = document.querySelector('#submit');
+
+            tombol.addEventListener('click', function() {
+                alert('Selamat anda berhasil register !');
+            });
+
+            function backtoMain(){
+              window.location.href = "welcomingpage.html";
+            } 
+        </script>
+      </body>
+</html>
