@@ -1,0 +1,90 @@
+body{
+    background-image: url("https://backgroundabstract.com/wp-content/uploads/edd/2022/01/25101-e1656072622949.jpg");
+    background-size: cover;
+    font-family: Arial;
+}
+
+.bncclogo{
+    padding-left: 10px;
+    width: 130px;
+    height: auto;
+}
+
+*{
+    text-decoration: none;
+}
+
+.navbar{
+    background-color:rgb(72, 161, 255);
+    padding: 10px;
+    font-family: Arial;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbarElements{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul{
+    display: flex;
+    gap: 20px;
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 40px;
+}
+
+li a{
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.anggota {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    text-align: center;    
+    background-color: #5aa5f5; 
+    padding: 20px;         
+    border-radius: 15px;   
+    max-width: 1000px;    
+    margin: auto;        
+}
+
+.gambaranggota img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    border: 5px solid white;
+}
+
+h1 {
+    margin: 10px 0; 
+    font-size: 24px;
+    font-weight: bold;
+    color: #000; 
+}
+
+p {
+    margin: 10px 0; 
+    font-size: 16px;
+    color: #000; 
+}
+
+.nama{
+    color: white;
+}
+
+.logout{
+    background-color: white;
+    border-radius: 10px;
+    height: 30px;
+}
