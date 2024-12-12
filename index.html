@@ -1,51 +1,33 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Login Form</title>
-        <style type="text/css">
-            body {
-              width: 100vw;
-              height: 100vh;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              flex-direction: column;
-              background-size: cover;
-            }
-
-            .container {
-              background-color: darkslategrey;
-              padding: 1.5rem;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              border-radius: 0.75rem;
-              color: aliceblue;
-              -webkit-border-radius: 0.75rem;
-              -moz-border-radius: 0.75rem;
-              -ms-border-radius: 0.75rem;
-              -o-border-radius: 0.75rem;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-          <h2>LOGIN FORM</h2>
-          <input placeholder="Email" />
-          <br /><br />
-          <input placeholder="Password" />
-          <br /><br />
-          <button id="submit">Submit</button>
-        </div>
-
-        <script>
-            var tombol = document.querySelector('#submit');
-
-            tombol.addEventListener('click', function() {
-                alert('anda berhasil login');
-                window.location.href = "https://www.w3schools.com/js/js_events.asp";
-            });
-        </script>
-      </body>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form">
+          <div class="container-title" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+            <img src="image/images-removebg-preview.png" height="50px" width="50px" alt="">
+            <h2>STEAM</h2>
+          </div>
+            <div class="input-group">
+                <label for="username" style="font-weight: 100; color: #1999ff;">SIGN IN WITH ACCOUNT NAME</label>
+                <input type="text" id="username" name="username"  required>
+            </div>
+            <div class="input-group">
+                <label for="password" style="font-weight: 100; color: #717274;">PASSWORD</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <input type="checkbox">
+            <label for="vehicle1" style="color: #717274;">Rimember me</label><br>
+            <div class="container-login" style="display: flex; justify-content: center; margin-top: 2rem;">
+              <button type="submit" class="login-btn">Sign in</button>
+            </div>
+        </form>
+    </div>
+</body>
 </html>
+
