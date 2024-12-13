@@ -85,3 +85,10 @@ body::before {
 .login-btn:hover {
   background-color: #45a049;
 }
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: none;
+}

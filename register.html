@@ -6,33 +6,84 @@
     <title>Form Register</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="login-container">
-        <form class="login-form">
-          <div class="container-title" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-            <img src="image/images-removebg-preview.png" height="50px" width="50px" alt="">
-            <h2>STEAM</h2>
-          </div>
+        <form id="register-form" class="login-form" onsubmit="return validateForm()">
+            <div class="container-title" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                <img src="image/images-removebg-preview.png" height="50px" width="50px" alt="">
+                <h2>STEAM</h2>
+            </div>
             <div class="input-group">
-                <label for="username" style="font-weight: 100; color: #1999ff;">NEW EMAIL ADDRESS</label>
-                <input type="text" id="username" name="username"  required>
+                <label for="email" style="font-weight: 100; color: #1999ff;">NEW EMAIL ADDRESS</label>
+                <input type="text" id="email" name="email">
+                <p class="error-message" id="email-error">Email harus valid!</p>
             </div>
             <div class="input-group">
                 <label for="password" style="font-weight: 100; color: #717274;">PASSWORD</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password">
+                <p class="error-message" id="password-error">Password harus minimal 8 karakter, termasuk huruf kapital dan angka.</p>
             </div>
-            <input type="checkbox">
-            <label for="vehicle1" style="color: #717274;">I am 13 years of age or older and agree to the terms of the Steam Subscriber Agreement and the Valve Privacy Policy.</label><br>
+            <div class="input-group">
+                <input type="checkbox" id="terms">
+                <label for="terms" style="color: #717274;">
+                    I am 13 years of age or older and agree to the terms of the Steam Subscriber Agreement and the Valve Privacy Policy.
+                </label>
+                <p class="error-message" id="terms-error">Anda harus menyetujui syarat dan ketentuan.</p>
+            </div>
             <div class="container-login" style="display: flex; justify-content: center; margin-top: 2rem;">
-              <button type="submit" class="login-btn" onclick="backtoMain()">Confirm</button>
+                <button type="submit" id="register" class="login-btn">Register</button>
             </div>
         </form>
     </div>
 
     <script>
-      function backtoMain(){
-            window.location.href = "index.html";
+        function validateForm() {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+            const terms = document.getElementById("terms").checked;
+
+            const emailError = document.getElementById("email-error");
+            const passwordError = document.getElementById("password-error");
+            const termsError = document.getElementById("terms-error");
+
+            let isValid = true;
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailError.style.display = "block";
+                isValid = false;
+            } else {
+                emailError.style.display = "none";
+            }
+
+            const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.{8,})/;
+            if (!passwordRegex.test(password)) {
+                passwordError.style.display = "block";
+                isValid = false;
+            } else {
+                passwordError.style.display = "none";
+            }
+
+            if (!terms) {
+                termsError.style.display = "block";
+                isValid = false;
+            } else {
+                termsError.style.display = "none";
+            }
+
+            if (!isValid) return false;
+
+            window.location.href = "dashboard.html";
+            return false;
         }
     </script>
 </body>

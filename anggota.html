@@ -2,19 +2,27 @@
 <html>
 <head>
     <title>Rolling RnD Week 5</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbarElements">
+    <div class="header-section">
+        <div class="navbar">
             <div class="logo"><a href="#"><img class="bncclogo" src="https://bncc.net/Homepage/BNCC.png"></a></div>
-            <ul class="buttons">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="#">Anggota</a></li>
-                <li><button class="logout"><a style="color: black; padding: 10px;" href="welcomingpage.html">Log Out</a></button></li>
-            </ul>
+            <div class="navigation">
+                <ul>
+                    <li><a href="dashboard.html">Store</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="anggota.html">About</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </div>
+
+            <div class="user-controls">
+                <button id="login" class="login-btn" onclick="location.href = 'index.html';">Login</button>
+                <button class="install-btn">Install Steam</button>
+            </div>
         </div>
-    </nav>
+    </div>
 
 <br>
     <h1 style="padding-top: 70px; text-align: center; font-size: 40px;">Anggota Kelompok 5:</h1>

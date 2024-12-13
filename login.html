@@ -8,32 +8,59 @@
 </head>
 <body>
     <div class="login-container">
-        <form class="login-form">
-          <div class="container-title" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-            <img src="image/images-removebg-preview.png" height="50px" width="50px" alt="">
-            <h2>STEAM</h2>
-          </div>
+        <form id="login-form" class="login-form" onsubmit="return validateForm()">
+            <div class="container-title" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                <img src="image/images-removebg-preview.png" height="50px" width="50px" alt="">
+                <h2>STEAM</h2>
+            </div>
             <div class="input-group">
                 <label for="username" style="font-weight: 100; color: #1999ff;">SIGN IN WITH ACCOUNT NAME</label>
-                <input type="text" id="username" name="username"  required>
+                <input type="text" id="username" name="username">
+                <p class="error-message" id="username-error">Username harus diisi!</p>
             </div>
             <div class="input-group">
                 <label for="password" style="font-weight: 100; color: #717274;">PASSWORD</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password">
+                <p class="error-message" id="password-error">Password harus minimal 8 karakter, termasuk huruf kapital dan angka.</p>
             </div>
-            <input type="checkbox">
-            <label for="vehicle1" style="color: #717274;">Rimember me</label><br>
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me" style="color: #717274;">Remember me</label><br>
             <div class="container-login" style="display: flex; justify-content: center; margin-top: 2rem;">
-              <button type="submit" id="sign-in"  class="login-btn" onclick="location.href = 'dashboard.html';">Sign in</button>
+                <button type="submit" id="sign-in" class="login-btn">Sign in</button>
             </div>
         </form>
     </div>
 </body>
 
 <script type="text/javascript">
-   document.getElementById("#sign-in").onclick = function () {
-    location.href = "dashboard.html";
-  };
+    function validateForm() {
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+
+        const usernameError = document.getElementById("username-error");
+        const passwordError = document.getElementById("password-error");
+
+        let isValid = true;
+
+        if (username === "") {
+            usernameError.style.display = "block";
+            isValid = false;
+        } else {
+            usernameError.style.display = "none";
+        }
+
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
+        if (!passwordRegex.test(password)) {
+            passwordError.style.display = "block";
+            isValid = false;
+        } else {
+            passwordError.style.display = "none";
+        }
+
+        if (!isValid) return false;
+
+        window.location.href = "dashboard.html";
+        return false;
+    }
 </script>
 </html>
-
