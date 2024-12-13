@@ -4,16 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Register</title>
-    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="icon" href="image/images-removebg-preview.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .error-message {
-            color: red;
-            font-size: 0.9rem;
-            margin-top: 5px;
-            display: none;
-        }
-    </style>
+    <script src="script/script.js"></script>
 </head>
 <body>
     <div class="login-container">
@@ -44,47 +37,5 @@
             </div>
         </form>
     </div>
-
-    <script>
-        function validateForm() {
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value;
-            const terms = document.getElementById("terms").checked;
-
-            const emailError = document.getElementById("email-error");
-            const passwordError = document.getElementById("password-error");
-            const termsError = document.getElementById("terms-error");
-
-            let isValid = true;
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                emailError.style.display = "block";
-                isValid = false;
-            } else {
-                emailError.style.display = "none";
-            }
-
-            const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.{8,})/;
-            if (!passwordRegex.test(password)) {
-                passwordError.style.display = "block";
-                isValid = false;
-            } else {
-                passwordError.style.display = "none";
-            }
-
-            if (!terms) {
-                termsError.style.display = "block";
-                isValid = false;
-            } else {
-                termsError.style.display = "none";
-            }
-
-            if (!isValid) return false;
-
-            window.location.href = "dashboard.html";
-            return false;
-        }
-    </script>
 </body>
 </html>
