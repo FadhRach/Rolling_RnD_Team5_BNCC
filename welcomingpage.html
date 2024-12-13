@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to STEAM</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <style type="text/css">
+        body {
+            background-image: url(background.png);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            background-size: cover;
+        }
+
+        .container {
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: left;
+            color: white;
+            background-color: black;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .right img {
+            max-width: 300px;
+            margin-top: 0;
+            height: auto;
+        }
+
+        .left {
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        button {
+            width: 20vw;
+            height: 6vh;
+            font-size: 15px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            background-image: linear-gradient(to bottom right, #0bbcff, #2b7efe);
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-image: linear-gradient(to bottom right, #2b7efe, #0bbcff);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="right">
+            <img src="logo.png">
+        </div>
+        <div class="left">
+            <h1>STEAM</h1>
+            <p>Steam is the ultimate destination for playing, discussing, and creating games.</p><br>
+            <button id="login" onclick="openLogIn()">Log In</button>
+            <button id="register" onclick="openRegis()">Register</button>
+        </div>
+    </div>
+
+    <script>
+        function openLogIn(){
+            window.location.href = "login.html";
+        }
+
+        function openRegis(){
+            window.location.href = "register.html";
+        }
+    </script>
+</body>
+</html>
