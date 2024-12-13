@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Login</title>
-    <link rel="icon" type="image/x-icon" href="logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="login-container">
@@ -23,11 +22,18 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <input type="checkbox">
-            <label for="vehicle1" style="color: #717274;">Remember me</label><br>
+            <label for="vehicle1" style="color: #717274;">Rimember me</label><br>
             <div class="container-login" style="display: flex; justify-content: center; margin-top: 2rem;">
-              <button type="submit" class="login-btn">Sign in</button>
+              <button type="submit" id="sign-in"  class="login-btn" onclick="location.href = 'dashboard.html';">Sign in</button>
             </div>
         </form>
     </div>
 </body>
+
+<script type="text/javascript">
+   document.getElementById("#sign-in").onclick = function () {
+    location.href = "dashboard.html";
+  };
+</script>
 </html>
+
